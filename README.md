@@ -45,7 +45,7 @@ File 'shortfile.txt' transfer is complete
 Connection from: 128.193.54.7
 File "shortfile.txt" requested on port 38540
 
-3) Invalid Comand
+3) Invalid Command
 > ftclient.py flip 38546 -z 38540 README.txt
 Client side validation! Error: 3d argument(command) must be either -l or -g
 ServSocket for receiving connection is created
