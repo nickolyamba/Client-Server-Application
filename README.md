@@ -1,1 +1,91 @@
-// Name: Nikolay Goncharenko// Email: goncharn@onid.oregonstate.edu// Class: CS372-400// Assignment: Project #2 ftserver.c ftclient.pyUsage:	1) Compilation: write 'make' on command line to compile 'ftserver' file	   To run, use one command line argument:  <server's port>	   	2) Run chatserver: ftserver <server's port>	3) Run ftclient.py: 	to get list of files to download, run: ftclient.py <server address> <server port> -l <data port> 	to download the file, run:  ftclient.py <server address> <server port> -g <filename> <data port> Examples:1) List Files on Server:	> ftserver 38546Server open on 38546Started listening for a new client to connect...>ftclient.py flip 38546 -l 38540ftserver.omakefileREADME.txtftserver.cftservershortfile.txt> Server Side:Connection from: 128.193.54.7List directory requested on port 38540Sending directory contents to 128.193.54.7:385402) Get shortfile.txt - 1Mb>ftclient.py flip 38546 -g shortfile.txt 38540 ServSocket for receiving connection is createdServSocket bound to port 38540servSocket is listening now...ControlSocket Connected to flip on 128.193.54.7:38546Receiving 'shortfile.txt' from 128.193.54.7:40669...File 'shortfile.txt' transfer is complete> Server Side:Connection from: 128.193.54.7File "shortfile.txt" requested on port 385403) Invalid Comand> ftclient.py flip 38546 -z 38540 README.txtClient side validation! Error: 3d argument(command) must be either -l or -gServSocket for receiving connection is createdServSocket bound to port 35456servSocket is listening now...ControlSocket Connected to flip on 128.193.54.7:38546flip:38546  says:ERROR: 3d argument (COMMAND) must be either -l , or -g!> Server Side:Connection from: 128.193.54.7Invalid command by client. Sending ERROR message to 128.193.54.74) Invalid filename command line argument>ftclient.py flip 38546 -g shortfile.tx 38540 ServSocket for receiving connection is createdServSocket bound to port 38540servSocket is listening now...ControlSocket Connected to flip on 128.193.54.7:38546flip:38546  says:ERROR: FILE NOT FOUND!> Server Side:Connection from: 128.193.54.7File "shortfile.tx" requested on port 38540File shortfile.tx not found. Sending error message to 128.193.54.7:38540!5) Downloading duplicate from the server:>ftclient.py flip 38546 -g shortfile.txt 38540ServSocket for receiving connection is createdServSocket bound to port 38540servSocket is listening now...ControlSocket Connected to flip on 128.193.54.7:38546Receiving 'shortfile.txt' from 128.193.54.7:40684...File 'shortfile.txt' already exists, and it's saved as shortfile.txt1File 'shortfile.txt' transfer is complete> Server Side:Connection from: 128.193.54.7File "shortfile.txt" requested on port 38540
+Usage:
+
+
+	1) Compilation: write 'make' on command line to compile 'ftserver' file
+	   To run, use one command line argument:  <server's port>
+	   
+
+	2) Run chatserver: ftserver <server's port>
+
+
+	3) Run ftclient.py: 
+	to get list of files to download, run: ftclient.py <server address> <server port> -l <data port> 
+	to download the file, run:  ftclient.py <server address> <server port> -g <filename> <data port> 
+
+
+Examples:
+
+1) List Files on Server:	
+> ftserver 38546
+Server open on 38546
+Started listening for a new client to connect...
+
+>ftclient.py flip 38546 -l 38540
+ftserver.o
+makefile
+README.txt
+ftserver.c
+ftserver
+shortfile.txt
+
+> Server Side:
+Connection from: 128.193.54.7
+List directory requested on port 38540
+Sending directory contents to 128.193.54.7:38540
+
+2) Get shortfile.txt - 1Mb
+>ftclient.py flip 38546 -g shortfile.txt 38540 
+ServSocket for receiving connection is created
+ServSocket bound to port 38540
+servSocket is listening now...
+ControlSocket Connected to flip on 128.193.54.7:38546
+Receiving 'shortfile.txt' from 128.193.54.7:40669...
+File 'shortfile.txt' transfer is complete
+
+> Server Side:
+Connection from: 128.193.54.7
+File "shortfile.txt" requested on port 38540
+
+3) Invalid Comand
+> ftclient.py flip 38546 -z 38540 README.txt
+Client side validation! Error: 3d argument(command) must be either -l or -g
+ServSocket for receiving connection is created
+ServSocket bound to port 35456
+servSocket is listening now...
+ControlSocket Connected to flip on 128.193.54.7:38546
+flip:38546  says:
+ERROR: 3d argument (COMMAND) must be either -l , or -g!
+
+
+> Server Side:
+Connection from: 128.193.54.7
+Invalid command by client. Sending ERROR message to 128.193.54.7
+
+4) Invalid filename command line argument
+>ftclient.py flip 38546 -g shortfile.tx 38540 
+ServSocket for receiving connection is created
+ServSocket bound to port 38540
+servSocket is listening now...
+ControlSocket Connected to flip on 128.193.54.7:38546
+flip:38546  says:
+ERROR: FILE NOT FOUND!
+
+> Server Side:
+Connection from: 128.193.54.7
+File "shortfile.tx" requested on port 38540
+File shortfile.tx not found. Sending error message to 128.193.54.7:38540!
+
+5) Downloading duplicate from the server:
+>ftclient.py flip 38546 -g shortfile.txt 38540
+ServSocket for receiving connection is created
+ServSocket bound to port 38540
+servSocket is listening now...
+ControlSocket Connected to flip on 128.193.54.7:38546
+Receiving 'shortfile.txt' from 128.193.54.7:40684...
+File 'shortfile.txt' already exists, and it's saved as shortfile.txt1
+File 'shortfile.txt' transfer is complete
+
+> Server Side:
+Connection from: 128.193.54.7
+File "shortfile.txt" requested on port 38540
+
