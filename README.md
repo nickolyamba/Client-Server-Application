@@ -1,11 +1,10 @@
 Usage:
 
 
-	1) Compilation: write 'make' on command line to compile 'ftserver' file
-	   To run, use one command line argument:  <server's port>
+	1) Compilation: type 'make' on a command line to compile 'ftserver.c' file
 	   
 
-	2) Run chatserver: ftserver <server's port>
+	2) Run ftserver: ftserver <server's port>
 
 
 	3) Run ftclient.py: 
