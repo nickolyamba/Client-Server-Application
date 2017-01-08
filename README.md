@@ -1,21 +1,22 @@
-Usage:
-
-
-1) Compilation: type 'make' on a command line to compile 'ftserver.c' file
+<p align="center">
+  <b >Two connection client-server network application</b>
+</p>
+The application allows a client to list and download \*.txt files from a server directory
+####Usage:</br>
+1) Compilation:  type `> make` on a command line to compile 'ftserver.c' file
 	   
-
-2) Run ftserver: ftserver \<server port>
-
+2) Run ftserver: `> ftserver <server port>`
 
 3) Run ftclient.py:</br>
 * to get list of files to download, run:</br>
-	`> ftclient.py \<server address> \<server port> -l \<data port>`
+	`> ftclient.py <server address> <server port> -l <data port>`
 * to download the file, run:  
-	`> ftclient.py \<server address> \<server port> -g \<filename> \<data port>`
+	`> ftclient.py <server address> <server port> -g <filename> <data port>`
 
-<b>Examples:</b>
+---
+####Examples:
 
-1) List Files on Server</br>
+1) List Files on the server</br>
 Server:
 ```
 > ftserver 38546
@@ -58,7 +59,7 @@ Connection from: 128.193.54.7
 File "shortfile.txt" requested on port 38540
 ```
 
-3) Invalid Command</br>
+3) Handling of an Invalid Command</br>
 Client:
 ```
 > ftclient.py flip 38546 -z 38540 README.txt
@@ -76,7 +77,7 @@ Connection from: 128.193.54.7
 Invalid command by client. Sending ERROR message to 128.193.54.7
 ```
 
-4) Invalid filename command line argument</br>
+4) Handling of Invalid filename</br>
 Client:
 ```
 > ftclient.py flip 38546 -g shortfile.tx 38540 
