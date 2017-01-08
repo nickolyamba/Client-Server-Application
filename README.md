@@ -40,7 +40,7 @@ Connection from: 128.193.54.7
 List directory requested on port 38540
 Sending directory contents to 128.193.54.7:38540
 ```
-
+</br>
 2) Get longfile.txt (~40Mb)</br>
 Client:
 ```
@@ -58,7 +58,7 @@ Server:
 Connection from: 128.193.54.7
 File "shortfile.txt" requested on port 38540
 ```
-
+</br>
 3) Handling of an Invalid Command</br>
 Client:
 ```
@@ -76,7 +76,7 @@ Server:
 Connection from: 128.193.54.7
 Invalid command by client. Sending ERROR message to 128.193.54.7
 ```
-
+</br>
 4) Handling of Invalid filename</br>
 Client:
 ```
@@ -95,7 +95,7 @@ Connection from: 128.193.54.7
 File "shortfile.tx" requested on port 38540
 File shortfile.tx not found. Sending error message to 128.193.54.7:38540!
 ```
-
+</br>
 5) Downloading duplicate from the server:
 Client:
 ```
