@@ -10,7 +10,7 @@ The application allows a client to list and download \*.txt files from a server 
 3) Run ftclient.py:</br>
 * to get list of files to download, run:</br>
 	`> ftclient.py <server address> <server port> -l <data port>`
-* to download the file, run:  
+* to download a selected file, run:  
 	`> ftclient.py <server address> <server port> -g <filename> <data port>`
 
 ---
