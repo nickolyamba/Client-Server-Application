@@ -1,8 +1,10 @@
 <p align="center">
   <b >Two connection client-server network application</b>
 </p>
-The application allows a client to list and download \*.txt files from a server directory
-####Usage:</br>
+
+The application allows a client to list and download \*.txt files from a server directory</br>
+
+#### Usage:</br>
 1) Compilation:  type `> make` on a command line to compile 'ftserver.c' file
 	   
 2) Run ftserver: `> ftserver <server port>`
@@ -14,15 +16,17 @@ The application allows a client to list and download \*.txt files from a server 
 	`> ftclient.py <server address> <server port> -g <filename> <data port>`
 
 ---
-####Examples:
+#### Examples:
 
-1) List Files on the server</br>
+#### 1. List Files on the server
+
 Server:
 ```
 > ftserver 38546
 Server open on 38546
 Started listening for a new client to connect...
 ```
+
 Client:
 ```
 > ftclient.py flip 38546 -l 38540
@@ -40,8 +44,9 @@ Connection from: 128.193.54.7
 List directory requested on port 38540
 Sending directory contents to 128.193.54.7:38540
 ```
-</br>
-2) Get longfile.txt (~40Mb)</br>
+
+#### 2. Get longfile.txt (~40Mb) ####
+
 Client:
 ```
 > ftclient.py flip 38546 -g shortfile.txt 38540 
@@ -58,8 +63,9 @@ Server:
 Connection from: 128.193.54.7
 File "shortfile.txt" requested on port 38540
 ```
-</br>
-3) Handling of an Invalid Command</br>
+
+#### 3. Handling of an Invalid Command ####
+
 Client:
 ```
 > ftclient.py flip 38546 -z 38540 README.txt
@@ -71,13 +77,15 @@ ControlSocket Connected to flip on 128.193.54.7:38546
 flip:38546  says:
 ERROR: 3d argument (COMMAND) must be either -l , or -g!
 ```
+
 Server:
 ```
 Connection from: 128.193.54.7
 Invalid command by client. Sending ERROR message to 128.193.54.7
 ```
-</br>
-4) Handling of Invalid filename</br>
+
+#### 4. Handling of Invalid filename ####
+
 Client:
 ```
 > ftclient.py flip 38546 -g shortfile.tx 38540 
@@ -95,8 +103,10 @@ Connection from: 128.193.54.7
 File "shortfile.tx" requested on port 38540
 File shortfile.tx not found. Sending error message to 128.193.54.7:38540!
 ```
-</br>
-5) Downloading duplicate from the server:
+
+
+#### 5. Downloading duplicate from the server ####
+
 Client:
 ```
 > ftclient.py flip 38546 -g shortfile.txt 38540
